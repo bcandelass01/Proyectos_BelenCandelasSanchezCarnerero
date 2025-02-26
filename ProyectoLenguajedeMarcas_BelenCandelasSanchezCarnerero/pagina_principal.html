@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title> Página principal de eventos</title>
+    <link rel="stylesheet" href="css/estilo_pagPrincipal.css">
+  </head>
+  <body>
+    <div id="presentacion">
+      <h3><u>Bienvenidos al portal de eventos</u></h3>
+      <p>
+        <b>
+          Descubre los mejores eventos enfocados a la sostenibilidad, el cuidado del medioambiente y el desarrollo comunitario.
+          Desde mercados con productos ecológicos hasta jornadas de limpieza comunitarias y charlas educativas. Aquí encontrarás
+          una amplia variedad de actividades diseñadas para inspirar hacia cambios positivos.</br></br>
+          Participa en experiencias que no solo te permitirán aprender y divertirte, si no que también te permitirán contribuir
+          activamente a la protección del planeta. </br></br>
+          ¡Forma parte del movimiento global para un futuro más verde y saludable! Porque cada acción cuenta,
+          y juntos podemos lograrlo
+        </b>
+      </p>
+    </div>
+
+    <div id="eventos_destacados">
+      <h3><u> Eventos más importantes </u></h3>
+      <p><b> Aquí se muestra un carrusel con los eventos más importantes:</b></p>
+      </br>
+      <section class="carrusel">
+        <div class="eventos">
+          <div class="evento">
+            <img src="images/eco.jpg">
+            <p class="descripcion"><b><u> Bio feria </u></b></p>
+          </div>
+          <div class="evento">
+            <img src="images/movilidad.jpg">
+            <p class="descripcion"><b><u> Movilidad sostenible </u></b></p>
+          </div>
+          <div class="evento">
+            <img src="images/plantacion.jpg">
+            <p class="descripcion"><b><u> Plantación de árboles </u></b></p>
+          </div>
+          <div class="evento">
+            <img src="images/carrera.jpg">
+            <p class="descripcion"><b><u> Carrera solidaria </u></b></p>
+          </div>
+          <div class="evento">
+            <img src="images/limpieza.jpg">
+            <p class="descripcion"><b><u> Limpieza comunitaria</u></b></p>
+          </div>
+          <div class="evento">
+            <img src="images/productos.jpg">
+            <p class="descripcion"><b><u> Mercado de productos ecológicos </u></b></p>
+          </div>
+        </div>
+        <div class="botones">
+          <button class="prev" onclick="moverSlide(-1)">&#10094;</button>
+          <button class="prev" onclick="moverSlide(1)">&#10095;</button>
+        </div>
+      </section>
+    </div>
+
+    <div id="eventos_actuales">
+      <h3><u> Eventos para este año </u></h3>
+      <p><b> Haz "click" aquí abajo para ir a la página con el listado de los eventos:</b></p>
+      <nav><b><a href="pagina_listado.html">Página de listado de eventos</a></b></nav>
+    </div>
+
+    <div id="pie">
+      <p><b>&copy; Proyecto Belén Candelas</b></p>
+    </div>
+  </body>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelector('.eventos');
+    const totalSlides = document.querySelectorAll('.evento').length;
+
+    function moverSlide(n) {
+        slideIndex += n;
+        if (slideIndex < 0) {
+            slideIndex = totalSlides - 1;
+        } else if (slideIndex >= totalSlides) {
+            slideIndex = 0;
+        }
+        slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+</script>
+</html>
